@@ -3,16 +3,16 @@ FROM node:24-alpine
 ENV MONGO_DB_USERNAME=admin \
     MONGO_DB_PWD=secret
 
-RUN mkdir -p /home/app
+RUN mkdir -p /home/node-app
 
-COPY ./app /home/app
+COPY ./app /home/node-app
 
 # set default dir so that next commands executes in /home/app dir
-WORKDIR /home/app
+WORKDIR /home/node-app
 
 # will execute npm install in /home/app because of WORKDIR
 RUN npm install
 
 # no need for /home/app/server.js because of WORKDIR
-CMD ["node", "/home/app/server.js"]
+CMD ["node", "server.js"]
 

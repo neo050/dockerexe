@@ -17,7 +17,7 @@ app.use(express.json());
 // -----------------------------------------------------------------------------
 const mongoUrl =
   process.env.MONGO_URL ??
-  'mongodb://admin:secret@localhost:27017/?authSource=admin';
+  'mongodb://admin:secret@mongodb:27017/?authSource=admin';
 const dbName = 'user-account';
 
 console.log('[BOOT] MONGO_URL =', mongoUrl);
